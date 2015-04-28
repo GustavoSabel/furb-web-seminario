@@ -18,6 +18,9 @@
 					<img src="../Resources/Imagens/home-icon_white_64.png" alt="Home" style="width:16px; height:16px; border:0; padding-top:0px;" />
 				</a>
 			</li>	
+			<li>
+				<a class="link_texto" href="usuarios.php">Usuários Cadastrados</a>
+			</li>
 		</ul>
 	</nav>
 	<section>
@@ -37,40 +40,6 @@
 				}
 			?>
 		</form>
-		<div class="usuarios">
-			<h2>Usuários Cadastrados</h2>
-			<table>
-				<thead>
-					<th>
-						Nome
-					</th>
-					<th>
-						Login
-					</th>
-				</thead>
-				<tbody>
-					<?php
-						include("../controller/dao/impl/UsuarioDaoImpl.php");
-						
-						$dao = new UsuarioDaoImpl();
-						$usuarios = $dao->listar(0,0);
-						for ($x = 0; $x <= count($usuarios); $x++) {
-							echo "<tr>";
-							echo "<td>";
-								echo $usuarios[0];
-							echo "</td>";
-							echo "<td>";
-								echo $usuarios[1];
-							echo "</td>";
-							echo "<td>";
-								echo $usuarios[2];
-							echo "</td>";
-							echo "</tr>";
-						}
-					?>
-				<tbody>
-			</table>
-		</div>
 	</section>
 	<footer>
 		<span> All Rights Reserved. </span>

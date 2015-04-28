@@ -18,7 +18,7 @@
 				<a class="link_texto" href="view/cadastrousuario.php">Cadastro de usuário</a>
 			</li>
 			<li>
-				<a class="link_texto" href="view/cadastrocategoria.php">Cadastro de categoria</a>
+				<a class="link_texto" href="view/usuarios.php">Usuários Cadastrados</a>
 			</li>
 		</ul>
 	</nav>

@@ -3,7 +3,7 @@
   //Conecta ao banco de dDados "financemanager"
   function getConnection() {
     $host = "localhost";
-    $db_name = "euquero";
+    $db_name = "financemanager";
     $user = "root";
     $password = "";
     

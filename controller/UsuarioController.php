@@ -32,6 +32,12 @@
     redireMsg("../view/cadastrousuario.php", "Usuário cadastrado com sucesso.");
   }  
   
+  function excluir($usuario)
+  {
+	  $usuarioDao = new UsuarioDaoImpl();
+	  $usuarioDao->excluir($usuario);
+  }
+  
   function buscarUsuarios()
   {
 	$usuarioDao = new UsuarioDaoImpl();
@@ -41,11 +47,12 @@
   try {
     if ($_POST["operacao"] == "salvar") {
       salvar();
+    } else if ($_POST["operacao"] == "excluir") {
+		excluir($_POST["usuario"]);
+		echo "Usuário ".$_POST["usuario"]." removido com sucesso";
     } /*else if ($_POST["operacao"] == "editar") {
       editar;
-    } else if ($_POST["operacao"] == "excluir") {
-      excluir;
-    } else if ($_POST["operacao"] == "buscar") {
+} else if ($_POST["operacao"] == "buscar") {
       buscar;
     } */
   } catch (Exception $e) {

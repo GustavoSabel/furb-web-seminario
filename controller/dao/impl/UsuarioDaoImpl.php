@@ -11,7 +11,7 @@ include("../model/Usuario.php");
     }
     
     public function excluir($identificador) {
-      throw new Exception("Função excluir não implementada.");
+       geraQuery("DELETE FROM ".Usuario::$TABELA." WHERE ".Usuario::$CAMPO_IDUSUARIO." = ".$identificador);
     }
     
     public function buscar($identificador) {
@@ -27,9 +27,13 @@ include("../model/Usuario.php");
     }
     
     public function listar($infoInicial, $infoFinal) {
+		throw new Exception("Função lsitar não implementada.");
+    }
+	
+    public function listarTodos() {
 		$result = geraQuery("select ".Usuario::$CAMPO_IDUSUARIO.", ".Usuario::$CAMPO_NOME.", ".Usuario::$CAMPO_LOGIN.", ".Usuario::$CAMPO_SENHA.
                           " from ".Usuario::$TABELA);
-		return geraArrayQuery($result);
+		return $result;
     }
     
     public function editar($info) {
