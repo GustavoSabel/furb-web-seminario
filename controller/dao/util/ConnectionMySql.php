@@ -3,7 +3,7 @@
   //Conecta ao banco de dDados "financemanager"
   function getConnection() {
     $host = "localhost";
-    $db_name = "financemanager";
+    $db_name = "euquero";
     $user = "root";
     $password = "";
     
@@ -19,8 +19,8 @@
   }
     
   //Fechar a conexão com o banco de dados "financemanager"
-  function closeConnection() {
-    mysql_close;
+  function closeConnection($link) {
+    mysql_close($link);
   }
 	
   //Gera o tempo atual no fuso-horário de Brasília. No horário oficial, o formato é Hora-3. No horário de verão, Hora-2
@@ -34,14 +34,14 @@
     
   //Retorna uma query mysql de um script
   function geraQuery($sql) {
-    getConnection();
+    $con = getConnection();
     try {
       $result = mysql_query($sql);
       if (!$result) {
 	throw new Exception("Query inválida: ".mysql_error());
       }
     } finally {
-      closeConnection();
+      closeConnection($con);
       return $result;
     }
   }
