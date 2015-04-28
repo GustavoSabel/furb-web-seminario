@@ -50,20 +50,20 @@
 				</thead>
 				<tbody>
 					<?php
-						include("../controller/UsuarioController.php");
+						include("../controller/dao/impl/UsuarioDaoImpl.php");
 						
-						$controller = new UsuarioController();
-						$usuarios = $controller->buscarUsuarios;
+						$dao = new UsuarioDaoImpl();
+						$usuarios = $dao->listar(0,0);
 						for ($x = 0; $x <= count($usuarios); $x++) {
 							echo "<tr>";
 							echo "<td>";
-								echo $controller[0];
+								echo $usuarios[0];
 							echo "</td>";
 							echo "<td>";
-								echo $controller[1];
+								echo $usuarios[1];
 							echo "</td>";
 							echo "<td>";
-								echo $controller[2];
+								echo $usuarios[2];
 							echo "</td>";
 							echo "</tr>";
 						}

@@ -1,7 +1,7 @@
 <?php
 include("../controller/dao/DAO.php");
 include("../controller/dao/util/ConnectionMySql.php");
-//include("model/Usuario.php");
+include("../model/Usuario.php");
 
   class UsuarioDaoImpl implements DAO {
 

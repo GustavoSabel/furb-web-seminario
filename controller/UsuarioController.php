@@ -1,7 +1,7 @@
 <?php
   include("../controller/dao/impl/UsuarioDaoImpl.php");
   include("../controller/funcoesController.php");
-  include("../model/Usuario.php");
+  //include("../model/Usuario.php");
 
   function salvar() {
     if (trim($_POST["nome"]) == "") {
