@@ -7,10 +7,6 @@
 	<script>
 		function deletar(idUsuario)
 		{
-			var linha = document.getElementById("usuario-" + idUsuario);
-			linha.parentNode.removeChild(linha);
-			
-			
 			var xmlhttp;
 			if (window.XMLHttpRequest)
 			{// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -24,11 +20,14 @@
 			{
 				if (xmlhttp.readyState==4 && xmlhttp.status==200)
 				{
-					//document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
-					alert('Removido com sucesso:' + xmlhttp.responseText);
+					//alert(xmlhttp.responseText);
 				}
 			}
-			xmlhttp.open("POST","../controller/UsuarioController.php",true);
+			
+			var linha = document.getElementById("usuario-" + idUsuario);
+			linha.parentNode.removeChild(linha);
+			
+			xmlhttp.open("POST","../controller/UsuarioController.php", true);
 			xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 			xmlhttp.send("operacao=excluir&usuario=" + idUsuario);
 		}

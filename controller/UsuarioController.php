@@ -1,7 +1,6 @@
 <?php
   include("../controller/dao/impl/UsuarioDaoImpl.php");
   include("../controller/funcoesController.php");
-  //include("../model/Usuario.php");
 
   function salvar() {
     if (trim($_POST["nome"]) == "") {
@@ -49,12 +48,8 @@
       salvar();
     } else if ($_POST["operacao"] == "excluir") {
 		excluir($_POST["usuario"]);
-		echo "Usuário ".$_POST["usuario"]." removido com sucesso";
-    } /*else if ($_POST["operacao"] == "editar") {
-      editar;
-} else if ($_POST["operacao"] == "buscar") {
-      buscar;
-    } */
+		//echo "Usuário ".$_POST["usuario"]." removido com sucesso";
+    } 
   } catch (Exception $e) {
     redireMsg("../view/cadastrousuario.php", "Erro: ".$e->getMessage());
   }
